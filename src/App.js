@@ -1,19 +1,38 @@
 import React, { Component } from 'react';
-import { Link,IndexLink } from 'react-router';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import NavBar from './components/Navigation/NavBar';
+import NavDrawer from './components/Navigation/NavDrawer';
+
+injectTapEventPlugin();
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-      	<h1>React Seed</h1>
-        <ul>
-          <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-          <li><Link to="/about" activeClassName="active">About</Link></li>
-          <li><Link to="/products" activeClassName="active">Products</Link></li>
-        </ul>
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+  }
 
-        {this.props.children}
-      </div>
+  handleToggle = () => this.setState({open: !this.state.open});
+
+  render() {
+    const styles = {
+      page: {
+        padding: 16
+      }
+    };
+
+    return (
+      <MuiThemeProvider>
+        <div>
+          <NavBar onMenuToggle={this.handleToggle}/>
+          <NavDrawer open={this.state.open} onToggle={this.handleToggle}/>
+          <div className="page" style={styles.page}>
+            {this.props.children}
+          </div>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Products = (props) => (
 	<div>
-		Products page
+		<h1>Products</h1>
 	</div>
 );
 
