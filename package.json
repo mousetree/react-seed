@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "gh-pages": "^0.12.0",
+    "gh-pages-travis": "^1.0.0",
     "react-scripts": "0.8.1"
   },
   "dependencies": {
@@ -18,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build&&gh-pages -d build"
+    "deploy": "npm run build&&gh-pages -d build",
+    "ci-deploy": "gh-pages-travis"
   },
   "homepage": "http://mousetree.github.io/react-seed"
 }

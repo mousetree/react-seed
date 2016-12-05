@@ -1,8 +1,21 @@
----
 language: node_js
 node_js:
-  - 4
-  - 6
+- 6
 cache:
   directories:
   - node_modules
+branches:
+  except:
+  - gh-pages
+after_sucess:
+- npm run ci-deploy
+env:
+  global:
+  - SSH_KEY="deploy_key"
+  - GIT_NAME="Adam Mausenbaum"
+  - GIT_EMAIL="adam@admm.io"
+  - SOURCE_DIR="build"
+  - DEPLOY_BRANCH="master"
+before_install:
+- openssl aes-256-cbc -K $encrypted_138f9a40f3f3_key -iv $encrypted_138f9a40f3f3_iv
+  -in deploy_key.enc -out deploy_key -d
