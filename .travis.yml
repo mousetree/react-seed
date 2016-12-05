@@ -7,3 +7,8 @@ cache:
 branches:
   except:
   - gh-pages
+deploy:
+  provider: heroku
+  app: admm-react-seed
+  api_key:
+    secure: qqSv7xsn5iJgfschqcKOugRNe0Ug8sMueQmTJYwQgLZT+nOeFDf3vCB+7nBeXW5YpGlaeK1F0EkV/3V9j+sOebqtJpvyL94ilO+ffl5sukLn1FdBdQ3r6SayeVnDOHg5TJp/aukN7pB5KSuTh95SUIkiSDSk1ySLuyg53CdmdvITtGtHzlgq2ITBqnoGSZnymLlSB4fA+0w+2pGNjv5zOOh5tDPa8j+AZp7N+Mt9zlqQdeZVb1A/DJVIUIMHHgLBmes65lO8oMgDcLSICtn8Ba7M6+uVRvQ9iKYy06wPR1vs3+sKvedsuYaORWP+0pHasMWO6pSCpMEeSV7tlUIHYuCy/tJwWHNpzXRi1AaXHXVAs+kceuj24D/uqPQrBDTPyS+wRrVfDidPRGr7/C1OaYxHX/MJ9rQS0ZqV/y2P6vofRs+HnazUwMvf+3tDI7l6i8hYS4bbACT8DjsjG97QMeY9Noi+e3HbEMn0/XUDwLvoCWplW/quAlaIdwBieJAMdLoFp1RtFTjpswiWI3fBoTcuuWl32RKTG4W6kWeYUmUyAPm2Rz88yiTu+c97TazB4H7DgQqdtxYOAldpqYHZIgqYCGfzCvdiSaIN1Wv7mFbLRZYwqZMzpVd20KmiKahnO6rbhg4OJWYFDQPPC9q9NZtpEBgcjIu8sifQf19NxvE=
