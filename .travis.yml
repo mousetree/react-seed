@@ -7,7 +7,7 @@ cache:
 branches:
   except:
   - gh-pages
-after_sucess:
+after_success:
 - npm run ci-deploy
 env:
   global:
