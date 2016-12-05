@@ -20,7 +20,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build",
-    "ci-deploy": "./node_modules/gh-pages-travis/gh-pages-travis"
+    "ci-deploy": "npm run build && ./node_modules/gh-pages-travis/gh-pages-travis"
   },
   "homepage": "http://mousetree.github.io/react-seed"
 }
