@@ -6,7 +6,7 @@ react-seed
 This is a template that I use for quickly creating new React apps with all the needed boilerplate.
 
 * [Todo](https://github.com/mousetree/react-seed/issues/1)
-* [Demo](http://admm.io/react-seed)
+* [Demo](https://admm-react-seed.herokuapp.com)
 
 ## Usage
 
