@@ -8,7 +8,10 @@ class App extends Component {
       body: {
         margin: 0,
         padding: 0,
-        fontFamily: 'Roboto'
+        lineHeight: 1.5,
+        color: '#666',
+        fontSize: 14,
+        fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif'
       },
       page: {
         padding: 16
