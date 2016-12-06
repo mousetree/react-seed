@@ -4,6 +4,11 @@ node_js:
 cache:
   directories:
   - node_modules
+before_script:
+- export REACT_APP_TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
+- export REACT_APP_TRAVIS_COMMIT=$TRAVIS_COMMIT
+- export REACT_APP_TRAVIS_JOB_NUMBER=$TRAVIS_JOB_NUMBER
+- export REACT_APP_BUILD_DATE=`date`
 branches:
   except:
   - gh-pages

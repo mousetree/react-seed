@@ -1,9 +1,10 @@
 import React from 'react';
 
 const travisVars = [
-	'TRAVIS_BUILD_NUMBER',
-	'TRAVIS_COMMIT',
-	'TRAVIS_JOB_NUMBER'
+	'REACT_APP_TRAVIS_BUILD_NUMBER',
+	'REACT_APP_TRAVIS_COMMIT',
+	'REACT_APP_TRAVIS_JOB_NUMBER',
+	'REACT_APP_BUILD_DATE'
 ];
 
 const About = (props) => (
@@ -11,7 +12,7 @@ const About = (props) => (
 		<h1>About</h1>
 		{travisVars.map((v) => {
 			return (
-				<p>{v}: {process.env[v] || 'N/A'}</p>
+				<p key={v}>{v.substr(10)}: {process.env[v] || 'N/A'}</p>
 			)
 		})}
 	</div>
