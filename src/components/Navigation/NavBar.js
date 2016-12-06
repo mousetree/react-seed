@@ -9,9 +9,10 @@ const styles = {
 		alignItems: 'center'
 	},
 	title: {
-		fontSize: 24,
+		fontSize: 20,
 		color: 'black',
-		textDecoration: 'none'
+		textDecoration: 'none',
+		marginLeft: 16
 	},
 	menu: {},
 	menuItem: {
@@ -26,6 +27,9 @@ const styles = {
 
 const NavBar = (props) => (
 	<div style={styles.container}>
+		<svg height="24" width="24">
+			<circle cx="12" cy="12" r="12" fill="grey" />
+		</svg>
 		<Link style={styles.title} to="/">
 			Seed
 		</Link>
