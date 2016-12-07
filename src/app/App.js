@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import NavBar from '../components/Navigation/NavBar';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {doAuthentication} from '../actions';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.props.doAuthentication();
+  }
 
   render() {
     const styles = {
@@ -20,7 +28,7 @@ class App extends Component {
 
     return (
         <div style={styles.body}>
-          <NavBar/>
+          <NavBar auth={this.props.auth}/>
           <div className="page" style={styles.page}>
             {this.props.children}
           </div>
@@ -29,4 +37,11 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  (state) => {
+    return {
+      auth: state.auth
+    }
+  },
+  (dispatch) => bindActionCreators({ doAuthentication }, dispatch)
+)(App);
