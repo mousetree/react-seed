@@ -1,4 +1,5 @@
 import Auth0Lock from 'auth0-lock';
+import { browserHistory } from 'react-router';
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
@@ -8,14 +9,26 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 
 // TODO move to config
 const domainId = 'admm.auth0.com';
-const clientId = 'gC5yMGZes8GLXcjgeYlu1LD2YNpBd2JP'
-const lock = new Auth0Lock(clientId, domainId);
+const clientId = 'gC5yMGZes8GLXcjgeYlu1LD2YNpBd2JP';
+const lock = new Auth0Lock(clientId, domainId, {
+  auth: {
+    redirectUrl: location.origin,
+    responseType: 'token'
+
+  }
+});
 
 export function login() {
   // display lock widget
   return dispatch => {
     dispatch(loginRequest());
-    lock.show();
+    lock.show({
+      auth: {
+        params: {
+          state: window.location.pathname
+        }
+      }
+    });
   }
 }
 
@@ -38,6 +51,9 @@ export function doAuthentication() {
         localStorage.setItem('profile', JSON.stringify(profile));
         return dispatch(loginSuccess(profile, token))
       });
+      // Redirect to previous state
+      authResult.state && browserHistory.push(authResult.state);
+
     });
   }
 }
