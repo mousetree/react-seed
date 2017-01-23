@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from '../components/Navigation/NavBar';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {doAuthentication} from '../actions';
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.props.doAuthentication();
-  }
 
   render() {
     const styles = {
@@ -37,11 +29,4 @@ class App extends Component {
   }
 }
 
-export default connect(
-  (state) => {
-    return {
-      auth: state.auth
-    }
-  },
-  (dispatch) => bindActionCreators({ doAuthentication }, dispatch)
-)(App);
+export default App;

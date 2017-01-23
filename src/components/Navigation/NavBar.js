@@ -1,8 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {login, logout} from '../../actions';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 
 const styles = {
 	container: {
@@ -44,19 +41,7 @@ const NavBar = (props) => (
 			<Link to="/products" style={styles.menuItem} activeStyle={styles.activeMenuItem}>Products</Link>
 		</div>
 		<div style={styles.spacer}></div>
-		<div>
-			{ props.auth && !props.auth.token ?
-				<a onClick={props.login}>Login</a> :
-				<a onClick={props.logout}>Logout</a>
-			}
-		</div>
 	</div>
 );
 
-export default connect(
-	(state) => state.auth,
-	(dispatch) => bindActionCreators({
-		login,
-		logout
-	}, dispatch)
-)(NavBar);
+export default NavBar;
